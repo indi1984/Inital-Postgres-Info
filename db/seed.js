@@ -71,7 +71,9 @@ async function createInitialUsers() {
   } catch(err) {
     console.log('Error creating users!');
     console.log(err);
-  };
+  } finally {
+    client.end();
+  }
 };
 
 async function buildDB() {
